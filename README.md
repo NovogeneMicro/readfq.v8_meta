@@ -39,7 +39,7 @@ Outline
 >>you can specify  the output data size by -o  
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000  
-    #-o 6000 means the size is 6G  
+    #-o 6000 means the output size is 6G  
 
 # filtering
 
