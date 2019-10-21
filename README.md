@@ -17,14 +17,14 @@ Outline
 * trimming  
 * all options  
 
-Installation
----
+# Installation
+
     git clone  
     #readfq.v8_meta can be used only for Linux systems  
     #readfq.v8_meta does not require installation to run directly  
 
-input and output
----
+# input and output
+
 >readfq.v8_meta only supports  paired-end (PE) input/output,read can be gzip format  
 >* input has been recorded in a read.list,can be specified by -f  
 >* read1 output and read2 output can be specified respectively by -3,-4 or --q3,--q4  
@@ -41,10 +41,9 @@ input and output
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000  
     #-o 6000 means the size is 6G  
 
-filtering
----
+# filtering
 
-#quality filter  
+## quality filter  
 >you can specify -q or --qual to filter low quality read  
 >* `-q QUAL,CONT` or `--qual QUAL,CONT`  
 >>QUAL the quality value that a base is qualified  
@@ -69,14 +68,12 @@ filtering
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -d -D duplications.fq.gz  
 
-trimming  
----
+# trimming  
 >you can specify --t or --trim to trim tail low quality bases,default 35  
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 --t 35  
 
-all options  
-----
+# all options  
 
     Usage: readfq.v8_meta -f <read.list> -P ** [OPTIONS]
     Options:
