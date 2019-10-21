@@ -35,10 +35,10 @@ Outline
     readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2  
 >>you can specify the output gzip format by -z  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z  
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z  
 >>you can specify  the output data size by -o  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000  
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000  
     #-o 6000 means the output size is 6G  
 
 # filtering
@@ -49,29 +49,29 @@ Outline
 >>QUAL the quality value that a base is qualified  
 >>CONT how many bases are allowed to be unqualified. Default 40bp  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -q 38,40   
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 -q 38,40   
     #-q 38,40  remove the reads with more than 40 low-quality bases (Q-value < 38)    
 ## N filter  
 >you can specify -n or --nnum to filter N's read  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -n 10  
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 -n 10  
     #-n 10 remove the reads with more than 10 bases which is N  
     
 ## adpter filter  
 >you can specify -l to filter reads which has more than a certain overlap with adpter  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -l 15  
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 -l 15  
     #-l 15 remove the reads which has more than 15bp's overlap with adpter  
     
 ## duplications filter  
 >you can specify -d or --dup  to filter duplications and also can specify -D or --DUP to get duplications reads  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -d -D duplications.fq.gz  
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 -d -D duplications.fq 
 
 # trimming  
 >you can specify --t or --trim to trim tail low quality bases,default 35  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 --t 35  
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 --t 35  
 
 # all options  
 
