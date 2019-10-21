@@ -43,7 +43,9 @@ input and output
 
 filtering
 ---
-##quality filter
+
+#quality filter
+
 >you can specify -q or --qual to filter low quality read
 >* `-q QUAL,CONT` or `--qual QUAL,CONT`
 >>QUAL the quality value that a base is qualified
@@ -51,7 +53,7 @@ filtering
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -q 38,40  
     #-q 38,40  remove the reads with more than 40 low-quality bases (Q-value < 38)  
-##N filter
+#N filter
 >you can specify -n or --nnum to filter N's read  
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -n 10  
