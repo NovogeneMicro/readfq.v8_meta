@@ -1,80 +1,81 @@
 readfq.v8_meta
 ====
-Program: readfq - raw data process pipeline
-Updated: v8_meta (Mar 17 2014, 11:07:04)
-Modify: lsq
-readfq.v8_meta is a software dedicated to the fast and accurate quality control of FastQ files. This tool is developed in C
+Program: readfq - raw data process pipeline  
+Updated: v8_meta (Mar 17 2014, 11:07:04)  
+Modify: lsq  
+readfq.v8_meta is a software dedicated to the fast and accurate quality control of FastQ files. This tool is developed in C  
 
 Outline
 ===
-* Installation
-* input and output
+* Installation  
+* input and output  
 * filtering  
-    * quality filter  
+    * quality filter    
     * N filter  
     * adpter filter  
-    * duplications filter  
-* trimming
-* all options
+    * duplications filter    
+* trimming  
+* all options  
 
 Installation
 ---
-    git clone
-    #readfq.v8_meta can be used only for Linux systems
-    #readfq.v8_meta does not require installation to run directly
+    git clone  
+    #readfq.v8_meta can be used only for Linux systems  
+    #readfq.v8_meta does not require installation to run directly  
 
 input and output
 ---
->readfq.v8_meta only supports  paired-end (PE) input/output,read can be gzip format
->* input has been recorded in a read.list,can be specified by -f
->* read1 output and read2 output can be specified respectively by -3,-4 or --q3,--q4
->* <read.list> example:
->>raw.read_1.fq.gz,raw.read_2.fq.gz raw.read_1.adp.list,raw.read_2.adp.list
->>raw.read_1.fq.gz,raw.read_2.fq.gz
+>readfq.v8_meta only supports  paired-end (PE) input/output,read can be gzip format  
+>* input has been recorded in a read.list,can be specified by -f  
+>* read1 output and read2 output can be specified respectively by -3,-4 or --q3,--q4  
+>* <read.list> example:  
+>>raw.read_1.fq.gz,raw.read_2.fq.gz raw.read_1.adp.list,raw.read_2.adp.list  
+>>raw.read_1.fq.gz,raw.read_2.fq.gz  
 
-    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2  
 >>you can specify the output gzip format by -z  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z
+    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z  
 >>you can specify  the output data size by -o  
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000  
-    #-o 6000 means the size is 6G
+    #-o 6000 means the size is 6G  
 
 filtering
 ---
 
-#quality filter
-
->you can specify -q or --qual to filter low quality read
->* `-q QUAL,CONT` or `--qual QUAL,CONT`
->>QUAL the quality value that a base is qualified
+#quality filter  
+>you can specify -q or --qual to filter low quality read  
+>* `-q QUAL,CONT` or `--qual QUAL,CONT`  
+>>QUAL the quality value that a base is qualified  
 >>CONT how many bases are allowed to be unqualified. Default 40bp  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -q 38,40  
-    #-q 38,40  remove the reads with more than 40 low-quality bases (Q-value < 38)  
-#N filter
+    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -q 38,40   
+    #-q 38,40  remove the reads with more than 40 low-quality bases (Q-value < 38)    
+## N filter  
 >you can specify -n or --nnum to filter N's read  
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -n 10  
     #-n 10 remove the reads with more than 10 bases which is N  
-##adpter filter
+    
+## adpter filter  
 >you can specify -l to filter reads which has more than a certain overlap with adpter  
 
     readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -l 15  
     #-l 15 remove the reads which has more than 15bp's overlap with adpter  
-##duplications filter
+    
+## duplications filter  
 >you can specify -d or --dup  to filter duplications and also can specify -D or --DUP to get duplications reads  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -d -D duplications.fq.gz
+    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 -d -D duplications.fq.gz  
 
-trimming
+trimming  
 ---
 >you can specify --t or --trim to trim tail low quality bases,default 35  
 
-    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 --t 35
+    readfq.v8_meta -f read.list -3 out.fq1.gz -4 out.fq2.gz -z -o 6000 --t 35  
 
-all options
+all options  
 ----
 
     Usage: readfq.v8_meta -f <read.list> -P ** [OPTIONS]
