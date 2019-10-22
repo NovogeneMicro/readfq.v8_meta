@@ -3,19 +3,19 @@ readfq.v8_meta
 Program: readfq - raw data process pipeline  
 Updated: v8_meta (Mar 17 2014, 11:07:04)  
 Modify: lsq  
-readfq.v8_meta is a software dedicated to the fast and accurate quality control of FastQ files. This tool is developed in C  
+readfq.v8_meta is a software dedicated to the fast and accurate quality control of FastQ files. This tool is developed in C supported to afford high performance.  
 
 Outline
 ===
-* Installation  
-* input and output  
-* filtering  
+* [Installation] (#Installation)
+* [input and output](#input and output)
+* [filtering](#filtering)
     * quality filter    
     * N filter  
     * adpter filter  
     * duplications filter    
-* trimming  
-* all options  
+* [trimming](#trimming)
+* [all options](#all options)
 
 # Installation
 
