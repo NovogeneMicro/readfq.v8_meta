@@ -8,14 +8,14 @@ readfq.v8_meta is a software dedicated to the fast and accurate quality control 
 Outline
 ===
 * [Installation](#Installation)
-* [input and output](#(inputandoutput))
+* [input and output](#(input-and-output))
 * [filtering](#filtering)
     * quality filter    
     * N filter  
     * adpter filter  
     * duplications filter    
 * [trimming](#trimming)
-* [all options](#(alloptions))
+* [all options](#(all-options))
 
 # Installation
 
