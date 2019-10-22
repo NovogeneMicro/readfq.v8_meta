@@ -19,7 +19,7 @@ Outline
 
 # Installation
 
-    git clone  
+    git clone git@github.com:NovogeneMicro/readfq.v8_meta.git
     #readfq.v8_meta can be used only for Linux systems  
     #readfq.v8_meta does not require installation to run directly  
 
