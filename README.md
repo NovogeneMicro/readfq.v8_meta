@@ -68,7 +68,7 @@ Outline
 ## duplications filter  
 >you can specify -d or --dup  to filter duplications and also can specify -D or --DUP to get duplications reads  
 
-    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 -d -D duplications.fq 
+    readfq.v8_meta -f read.list -3 out.fq1 -4 out.fq2 -z -o 6000 -d -D   
 
 # trimming  
 >you can specify --t or --trim to trim tail low quality bases,default 35  
